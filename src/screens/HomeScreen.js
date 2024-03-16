@@ -14,7 +14,6 @@ const NoteApp = ({ navigation }) => {
     useEffect(() => {
         const path = FileSystem.documentDirectory + "notes.json";
 
-        // read the JSON file
         FileSystem.readAsStringAsync(path)
             .then((result) => {
                 console.log("FILE READ!");
@@ -77,8 +76,6 @@ const NoteApp = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.container}>
-                {/* <Button title="Go to Jane's profile" onPress={() => navigation.navigate("Profile", { name: "Jane" })} /> */}
-
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.textInput}
@@ -88,9 +85,7 @@ const NoteApp = ({ navigation }) => {
                         onSubmitEditing={addNote}
                     />
                     <TouchableOpacity style={styles.button} onPressIn={addNote}>
-                        {/* <View style={styles.button}> */}
                         <Text style={styles.buttonText}>+</Text>
-                        {/* </View> */}
                     </TouchableOpacity>
                 </View>
 
@@ -103,11 +98,8 @@ const NoteApp = ({ navigation }) => {
                                 <Image source={{ uri: "https://robohash.org/" + item }} style={styles.image} />
                                 <Text style={styles.name}>{item}</Text>
                                 <TouchableOpacity activeOpacity={1} style={styles.button} onPressIn={() => deleteNote(index)}>
-                                    {/* <View style={styles.button}> */}
                                     <Text style={styles.buttonText}>-</Text>
-                                    {/* </View> */}
                                 </TouchableOpacity>
-                                {/* <Button title="Delete" style={styles.button} onPress={() => deleteNote(index)} /> */}
                             </View>
                         </TouchableWithoutFeedback>
                     )}
@@ -153,9 +145,6 @@ export const styles = StyleSheet.create({
     },
     textInput: {
         flex: 1,
-        // borderWidth: 1,
-        // borderColor: "#841584",
-        // borderRadius: 10,
         padding: 10,
         fontSize: 18,
         marginRight: 10,

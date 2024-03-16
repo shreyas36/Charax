@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, StyleSheet, Button, ScrollView, Alert, BackHandler } from "react-native";
-import { MarkdownTextInput } from "@expensify/react-native-live-markdown";
 import { styles as homestyles } from "./HomeScreen";
 
-// import RNFS from "react-native-fs";
 import * as FileSystem from "expo-file-system";
 
 const ProfileScreen = ({ navigation, route }) => {
@@ -67,8 +65,6 @@ const ProfileScreen = ({ navigation, route }) => {
 
     return (
         <View style={styles.container}>
-            {/* <Text style={styles.title}>{route.params.item}'s Profile</Text> */}
-
             <ScrollView style={styles.scroll}>
                 {isEditing ? (
                     <TextInput
